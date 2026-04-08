@@ -60,13 +60,12 @@ class HomeTab extends StatelessWidget {
 
             // Promotional Carousel
             const SizedBox(height: 16),
-            CarouselSlider(
-              options: CarouselOptions(
-                height: 180.0,
-                autoPlay: true,
-                enlargeCenterPage: true,
-                viewportFraction: 0.9,
-              ),
+            Container(
+  height: 200,
+  child: Center(
+    child: Text('Featured Items'),
+  ),
+)
               items: offerImages.map((imageUrl) {
                 return Builder(
                   builder: (BuildContext context) {
