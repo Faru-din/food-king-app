@@ -136,7 +136,7 @@ class HomeContent extends StatelessWidget {
             Expanded(
               child: Consumer<MenuProvider>(
                 builder: (context, menuProvider, child) {
-                  final items = menuProvider.menuItems;
+                  final items = menuProvider.products;
                   if (items.isEmpty) {
                     return const Center(
                       child: Text('No items available'),
@@ -151,12 +151,12 @@ class HomeContent extends StatelessWidget {
                         child: ListTile(
                           leading: const Icon(Icons.fastfood, size: 40),
                           title: Text(item.name),
-                          subtitle: Text('৳${item.price.toStringAsFixed(0)}'),
+                          subtitle: Text('৳${item.basePrice.toStringAsFixed(0)}'),
                           trailing: IconButton(
                             icon: const Icon(Icons.add_shopping_cart),
                             onPressed: () {
                               Provider.of<CartProvider>(context, listen: false)
-                                  .addItem(item);
+                                  .addItem(item, null, []);
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                   content: Text('${item.name} added to cart'),
