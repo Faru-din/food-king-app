@@ -35,13 +35,13 @@ void main() async {
 }
 
 class FoodKingApp extends StatelessWidget {
-  const FoodKingApp({super.key});
+   FoodKingApp({super.key});
 
     return MaterialApp(
       title: 'Food-King',
       theme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
+      home:  SplashScreen(),
     );
   }
 }
